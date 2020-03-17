@@ -1,8 +1,9 @@
-package com.dongldh.retrofitexample
+package com.dongldh.retrofitexample.retrofit1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.dongldh.retrofitexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         val retrofit: Retrofit = builder.build()
 
         // 실제 request를 진행
-        val client: GitHubClient = retrofit.create(GitHubClient::class.java)
+        val client: GitHubClient = retrofit.create(
+            GitHubClient::class.java)
         val call: Call<List<GitHubRepo>> = client.reposForUser("linear14")
 
         // Call Object 사용 (비동기)
@@ -42,7 +44,11 @@ class MainActivity : AppCompatActivity() {
                 // body() --> List<GitHubRepo>
                 val repos = response.body()!!
 
-                listView.adapter = GitHubRepoAdapter(this@MainActivity, repos)
+                listView.adapter =
+                    GitHubRepoAdapter(
+                        this@MainActivity,
+                        repos
+                    )
             }
 
         })

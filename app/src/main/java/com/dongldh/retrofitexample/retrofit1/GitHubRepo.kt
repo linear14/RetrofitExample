@@ -1,4 +1,4 @@
-package com.dongldh.retrofitexample
+package com.dongldh.retrofitexample.retrofit1
 
 import com.google.gson.annotations.SerializedName
 

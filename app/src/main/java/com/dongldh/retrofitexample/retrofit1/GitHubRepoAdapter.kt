@@ -1,12 +1,14 @@
-package com.dongldh.retrofitexample
+package com.dongldh.retrofitexample.retrofit1
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.dongldh.retrofitexample.R
 
-class GitHubRepoAdapter(context: Context, val repos: List<GitHubRepo>): ArrayAdapter<GitHubRepo>(context, R.layout.list_item_pagination, repos) {
+class GitHubRepoAdapter(context: Context, val repos: List<GitHubRepo>): ArrayAdapter<GitHubRepo>(context,
+    R.layout.list_item_pagination, repos) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var row: View? = convertView
 
